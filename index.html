@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Iman’s Bachelorette</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fcf9fb;--card:#ffffff;--ink:#4a3550;--soft:#8a7790;--pink:#f3cfdb;--lav:#d9d0f1;--blue:#cfe0f4;--yel:#f7ecbd;--line:#eadfee;--ok:#bfe5d0;--bad:#f6cdd2}
+@media(prefers-color-scheme:dark){:root{--bg:#251c2b;--card:#33283a;--ink:#f6ecf4;--soft:#b9a8c0;--pink:#6e4558;--lav:#54487a;--blue:#3f5878;--yel:#6f6540;--line:#4a3d54;--ok:#3d6552;--bad:#74434c}}
+*{box-sizing:border-box}html,body{margin:0}
+body{font:400 1rem/1.5 Jost,system-ui,sans-serif;background:var(--bg);color:var(--ink);padding-bottom:96px}
+main{max-width:560px;margin:0 auto;padding:28px 18px 8px}
+header{text-align:center;padding:10px 0 18px}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;margin:0;line-height:1.1}
+h1{font-size:2.9rem;letter-spacing:.01em}
+h2{font-size:1.7rem;margin-bottom:10px}
+.tag{font:italic 500 1.2rem 'Cormorant Garamond',Georgia,serif;color:var(--soft);margin:8px 0 14px}
+.band{height:5px;border-radius:9px;background:linear-gradient(90deg,var(--pink) 25%,var(--lav) 25% 50%,var(--blue) 50% 75%,var(--yel) 75%);max-width:220px;margin:0 auto}
+svg.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;vertical-align:-4px}
+nav{display:flex;gap:4px;justify-content:center;border-bottom:1px solid var(--line);margin:6px 0 16px}
+nav button{background:none;border:0;border-bottom:2px solid transparent;padding:10px 12px;color:var(--soft);font:500 .95rem Jost,sans-serif;cursor:pointer;display:flex;gap:7px;align-items:center}
+nav button.on{color:var(--ink);border-color:var(--ink)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:20px;margin:14px 0}
+.opt{display:flex;justify-content:space-between;width:100%;text-align:left;margin:8px 0;padding:14px 16px;border-radius:4px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:500 1rem Jost,sans-serif;cursor:pointer}
+.opt.sel{background:var(--lav);border-color:var(--ink)}.opt.right{background:var(--ok)}.opt.wrong{background:var(--bad)}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+input,textarea{width:100%;padding:12px;border-radius:4px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:400 1rem Jost,sans-serif;margin:6px 0}
+textarea{min-height:110px;resize:vertical}
+.btn{border:1px solid var(--ink);background:var(--ink);color:var(--bg);border-radius:4px;padding:11px 20px;font:500 .95rem Jost,sans-serif;cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+.btn.ghost{background:transparent;color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.grid button{padding:0;border:2px solid var(--line);border-radius:4px;overflow:hidden;background:var(--blue);aspect-ratio:1;position:relative;cursor:pointer}
+.grid button.sel{border-color:var(--ink)}.grid button.right{border-color:#5aa883;border-width:4px}
+.grid img,.pic{width:100%;height:100%;object-fit:cover;display:block}
+.pic{border-radius:4px;aspect-ratio:1;background:var(--lav);margin-bottom:12px}
+.num{position:absolute;top:5px;left:5px;background:var(--card);color:var(--ink);border-radius:3px;padding:0 7px;font-size:.85rem}
+.row{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border:0}.tm{color:var(--soft);min-width:78px}
+.small{font-size:.88rem;color:var(--soft)}.c{text-align:center}
+.host{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--line);padding:10px 10px calc(10px + env(safe-area-inset-bottom,0px));display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.host .btn{padding:8px 12px;font-size:.85rem}
+.host .btn:not(.ghost){background:var(--ink)}
+[hidden]{display:none!important}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="home" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7M5 10v10h14V10"/></symbol>
+<symbol id="cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+<symbol id="mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+<symbol id="cup" viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0zM7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3"/></symbol>
+<symbol id="set" viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></symbol>
+<symbol id="q" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 1-1 1.7M12 17h.01"/></symbol>
+<symbol id="usr" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></symbol>
+<symbol id="hrt" viewBox="0 0 24 24"><path d="M12 20s-8-5-8-11a4.5 4.5 0 0 1 8-2.5A4.5 4.5 0 0 1 20 9c0 6-8 11-8 11z"/></symbol>
+<symbol id="tgt" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+<symbol id="prv" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+<symbol id="nxt" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
+<symbol id="eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+</defs></svg>
+<main><header><h1>Iman’s Bachelorette</h1><p class="tag">Iman Kooiker. Table for one, reserved for Mo.</p><div class="band"></div></header>
+<nav id="nav"></nav><div id="v"></div></main>
+<div id="hb" class="host" hidden></div>
+<script type="module">
+/* ---- PASTE YOUR FIREBASE CONFIG HERE (see setup steps) ---- */
+const FB={apiKey:"AIzaSyAxxMLOlePz6RCCJrkJwl64Hu75wP21CWY",authDomain:"imans-bach.firebaseapp.com",databaseURL:"https://imans-bach-default-rtdb.europe-west1.firebasedatabase.app",projectId:"imans-bach",appId:"1:565985096204:web:873e92f4c65df0a9cb7429"};
+const HOST_PIN="1006"; /* change this to your own PIN */
+import {initializeApp} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {getDatabase,ref,set,update,onValue} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+const $=s=>document.querySelector(s);
+const e=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ic=n=>`<svg class="i"><use href="#${n}"/></svg>`;
+const DEF={itin:"7:00 pm | Arrivals and welcome drinks\n7:30 pm | Order, then Guess the Girl\n8:15 pm | How well do you know Iman\n9:00 pm | Which beard is Mo’s\n9:30 pm | Memory lane\n10:00 pm | Most Likely To and the winner",
+trivia:"SAMPLE: replace me. What is Iman’s usual coffee order? | Oat flat white | Black americano | Iced latte | Hot chocolate\nSAMPLE: Where did Iman and Mo first meet? | Through friends | At work | Online | At a wedding",
+likely:"Most likely to cry at the wedding\nMost likely to lose the rings\nMost likely to dance on a table\nMost likely to be late to the nikah",
+girls:"Real name | Fake boy name | Fake bio | swapped-photo.jpg | real-photo.jpg",mo:"mo.jpg\nceleb1.jpg\nceleb2.jpg",moFile:"mo.jpg"};
+let db,D={},tab='party',name=localStorage.pn||'',uid=localStorage.uid||(localStorage.uid=Math.random().toString(36).slice(2)),host=localStorage.host==='1',mine={},cfgLoaded=false;
+const cfg=k=>(D.config&&D.config[k])??DEF[k];
+const st=()=>({mode:'home',i:0,rev:false,...(D.state||{})});
+const players=()=>Object.values(D.players||{}).map(p=>p.name);
+const ansList=()=>Object.values(D.answers||{});
+const lines=k=>String(cfg(k)).split('\n').filter(x=>x.trim());
+const trivia=()=>lines('trivia').map((l,i)=>{const p=l.split('|').map(s=>s.trim()),q=p.shift(),a=p[0],o=p.slice(1),k=i%(o.length+1);o.splice(k,0,a);return{id:'t'+i,q,opts:o,ans:k}});
+const likely=()=>lines('likely').map((q,i)=>({id:'l'+i,q}));
+const girls=()=>lines('girls').map(l=>{const p=l.split('|').map(s=>s.trim());return{real:p[0],fake:p[1],bio:p[2],swap:p[3],pic:p[4]}});
+const hash=s=>[...s].reduce((a,c)=>(a*31+c.charCodeAt(0))>>>0,7);
+const moTiles=()=>lines('mo').map(s=>s.trim()).sort((a,b)=>hash(a)-hash(b));
+const moIdx=()=>moTiles().indexOf(String(cfg('moFile')).trim());
+const photo=f=>f?encodeURI(f):'';
+function scores(){const R=Object.fromEntries(trivia().map(r=>[r.id,r.ans]));R.mo=moIdx();const s={};players().forEach(n=>s[n]=0);ansList().forEach(a=>{if(a.r in R&&a.c===R[a.r])s[a.name]=(s[a.name]||0)+1});return Object.entries(s).sort((a,b)=>b[1]-a[1])}
+function nav(){const t=[['party','home','Party'],['itin','cal','Plan'],['mem','mail','Messages'],['score','cup','Scores']];if(host)t.push(['setup','set','Setup']);$('#nav').innerHTML=t.map(([k,i,l])=>`<button class="${tab==k?'on':''}" onclick="go('${k}')">${ic(i)}${l}</button>`).join('')}
+window.go=k=>{if(k=='setup'&&!host){const p=prompt('Host PIN');if(p!==HOST_PIN)return;host=true;localStorage.host='1'}tab=k;draw()};
+window.pick=(r,c)=>{mine[r]=c;set(ref(db,`answers/${r}_${uid}`),{r,name,c});draw()};
+const S=d=>update(ref(db,'state'),d);
+window.S=S;
+function draw(){nav();const v=$('#v');
+if(!FB.apiKey){v.innerHTML='<div class="card"><h2>Almost ready</h2><p>Add your Firebase config at the top of this file to switch the games on.</p></div>';return}
+if(!name&&tab!='setup'&&!host){v.innerHTML=`<div class="card c"><h2>Join the party</h2><p>Enter your name to take part.</p><input id="nm" placeholder="Your name" maxlength="20"><button class="btn" onclick="join()">Join</button></div>`;return}
+v.innerHTML=({party:vParty,itin:vItin,mem:vMem,score:vScore,setup:vSetup}[tab])();hbar()}
+window.join=()=>{const n=$('#nm').value.trim();if(!n)return;name=n;localStorage.pn=n;set(ref(db,'players/'+uid),{name:n});draw()};
+function vItin(){return `<div class="card"><h2>Itinerary</h2>`+lines('itin').map(l=>{const[a,...b]=l.split('|');return `<div class="row"><span class="tm">${e(a)}</span><span>${e(b.join('|'))}</span></div>`}).join('')+`</div>`}
+function vScore(){const s=scores();return `<div class="card"><h2>Leaderboard</h2>`+(s.length?s.map(([n,p],i)=>`<div class="row"><span>${i+1}. ${e(n)}</span><b>${p}</b></div>`).join(''):'<p class="small">No players yet.</p>')+`</div>`}
+function vMem(){return `<div class="card"><h2>Share a memory</h2><p class="small">Keep it a little vague. Iman will read it out loud and guess who wrote it.</p><textarea id="mt" placeholder="Write your memory here"></textarea><button class="btn" onclick="sendMem()">${ic('mail')}Send anonymously</button><p id="mm" class="small"></p></div>`}
+window.sendMem=()=>{const t=$('#mt').value.trim();if(!t)return;set(ref(db,'memories/'+uid+'_'+Date.now()),{text:t,by:name,t:Date.now()});$('#mt').value='';$('#mm').textContent='Sent. You can send more.'};
+function opts(r,arr,correct,rev){const m=mine[r.id];return arr.map((o,k)=>{let cl=m===k?'sel':'';if(rev&&correct!=null)cl=k===correct?'right':m===k?'wrong':'';return `<button class="opt ${cl}" ${rev?'disabled':`onclick="pick('${r.id}',${k})"`}>${e(o)}</button>`}).join('')}
+function vParty(){const s=st(),m=s.mode;
+if(m=='trivia'){const R=trivia(),r=R[s.i];if(!r)return '<div class="card">No more questions.</div>';return `<div class="card"><p class="small">Question ${s.i+1} of ${R.length}</p><h2>${e(r.q)}</h2>${opts(r,r.opts,r.ans,s.rev)}<p class="small c">${ansList().filter(a=>a.r==r.id).length} answered</p></div>`}
+if(m=='mo'){const u=moTiles(),ix=moIdx();if(!u.length)return '<div class="card">Photos have not been added yet.</div>';return `<div class="card"><h2>Which beard belongs to Mo?</h2><div class="grid">${u.map((f,k)=>`<button class="${s.rev?(k==ix?'right':''):mine.mo===k?'sel':''}" ${s.rev?'disabled':`onclick="pick('mo',${k})"`}><img src="${photo(f)}" alt=""><span class="num">${k+1}</span></button>`).join('')}</div><p class="small c">${ansList().filter(a=>a.r=='mo').length} guessed${s.rev?`. It was number ${ix+1}.`:''}</p></div>`}
+if(m=='likely'){const r=likely()[s.i];if(!r)return '<div class="card">No more prompts.</div>';const t={};ansList().filter(a=>a.r==r.id).forEach(a=>t[a.c]=(t[a.c]||0)+1);return `<div class="card"><h2>${e(r.q)}</h2><p class="small">Vote for one of the girls.</p>${players().map(n=>`<button class="opt ${mine[r.id]===n?'sel':''}" ${s.rev?'disabled':`onclick="pick('${r.id}',this.dataset.n)"`} data-n="${e(n)}"><span>${e(n)}</span>${s.rev?`<b>${t[n]||0}</b>`:''}</button>`).join('')}</div>`}
+if(m=='guess'){const g=girls()[s.i];if(!g)return '<div class="card">Add the girls in Setup.</div>';return `<div class="card c"><h2>Guess the girl</h2><p class="small">${s.i+1} of ${girls().length}</p>${g.swap?`<img class="pic" src="${photo(g.swap)}" alt="">`:'<div class="pic"></div>'}<h2>${e(g.fake)}</h2><p>${e(g.bio)}</p>${s.rev?`<h2>It is ${e(g.real)}</h2>${g.pic?`<img class="pic" src="${photo(g.pic)}" alt="">`:''}`:'<p class="small">Iman, who is it?</p>'}</div>`}
+if(m=='mem'){const M=Object.values(D.memories||{}).sort((a,b)=>a.t-b.t),x=M[s.i];if(!x)return '<div class="card c">No more messages.</div>';return `<div class="card c"><p class="small">Message ${s.i+1} of ${M.length}</p><h2>“${e(x.text)}”</h2>${s.rev?`<p>Written by <b>${e(x.by)}</b></p>`:'<p class="small">Iman, who wrote this?</p>'}</div>`}
+return `<div class="card"><h2>Welcome${name?', '+e(name):''}</h2><p>The games begin when the host starts them. The itinerary is below.</p></div>`+vItin()}
+function hbar(){const h=$('#hb');h.hidden=!host;if(!host)return;const s=st(),M=[['home','home','Home'],['trivia','q','Trivia'],['mo','usr','Mo'],['guess','hrt','Swipe'],['mem','mail','Messages'],['likely','tgt','Likely']];h.innerHTML=M.map(([k,i,l])=>`<button class="btn ${s.mode==k?'':'ghost'}" onclick="S({mode:'${k}',i:0,rev:false});tab='party'">${ic(i)}${l}</button>`).join('')+`<button class="btn ghost" aria-label="Previous" onclick="S({i:Math.max(0,${s.i}-1),rev:false})">${ic('prv')}</button><button class="btn" onclick="S({rev:${!s.rev}})">${ic('eye')}${s.rev?'Hide':'Reveal'}</button><button class="btn ghost" aria-label="Next" onclick="S({i:${s.i}+1,rev:false})">${ic('nxt')}</button>`}
+function vSetup(){const T=(id,l,h,k,r)=>`<label>${l}</label><p class="small" style="margin:0">${h}</p><textarea id="${id}" rows="${r||5}">${e(cfg(k))}</textarea>`;return `<div class="card"><h2>Host setup</h2>${T('s1','Itinerary','One per line: time | activity','itin')}${T('s2','Trivia','One per line: Question | correct answer | wrong | wrong | wrong','trivia')}${T('s3','Most likely to','One prompt per line','likely')}${T('s4','The girls','One per line: real name | fake boy name | fake bio | swapped photo file | real photo file','girls')}${T('s5','Mo beard photos','One photo file name per line: Mo plus about ten celebrities','mo')}<label>Mo’s file name</label><input id="s6" value="${e(cfg('moFile'))}"><p><button class="btn" onclick="save()">Save</button> <span id="sv" class="small"></span></p><p class="small">Upload the photos to the same GitHub repository as this page, then type their exact file names here.</p></div>`}
+window.save=()=>{set(ref(db,'config'),{itin:$('#s1').value,trivia:$('#s2').value,likely:$('#s3').value,girls:$('#s4').value,mo:$('#s5').value,moFile:$('#s6').value}).then(()=>$('#sv').textContent='Saved')};
+const sd=()=>{const a=document.activeElement;if(a&&a.matches('input,textarea'))return;draw()};
+draw();
+if(FB.apiKey){db=getDatabase(initializeApp(FB));onValue(ref(db,'/'),s=>{D=s.val()||{};Object.values(D.answers||{}).forEach(a=>{});for(const[k,a]of Object.entries(D.answers||{}))if(k.endsWith('_'+uid))mine[a.r]??=a.c;sd()})}
+</script></body></html>
